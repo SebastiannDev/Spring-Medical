@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AdministradorApplication<administrador>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.alura.clinica.administrador.AdministradorApplication",
+            "projectName": "administrador",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
