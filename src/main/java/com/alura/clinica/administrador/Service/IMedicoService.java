@@ -2,15 +2,15 @@ package com.alura.clinica.administrador.Service;
 
 import java.util.List;
 
-import com.alura.clinica.administrador.Dto.Medico.ListMedicoDto;
-import com.alura.clinica.administrador.Dto.Medico.RegisterMedicoDto;
-import com.alura.clinica.administrador.Dto.Medico.ResponseMedicoDto;
+import com.alura.clinica.administrador.Dto.Medico.MedicDto;
+import com.alura.clinica.administrador.Dto.Medico.ResponseMedicDto;
+import com.alura.clinica.administrador.Dto.Medico.ResponseMessage;
 
 public interface IMedicoService {
     
-    public List<ListMedicoDto> getAllMedics();                  // GET
-    public ListMedicoDto getOneMedic(Long id);                  // GET
-    public ListMedicoDto createMedic(RegisterMedicoDto medic);                         // POST
-    public ListMedicoDto editMedic(Long id, ListMedicoDto medic);   // PUT
-    public ResponseMedicoDto deleteMedic(Long id);          // DELETE
+    public List<ResponseMedicDto> getAllMedics();                    // GET
+    public ResponseMedicDto getOneMedic(Long id);                   // GET
+    public ResponseMedicDto createMedic(MedicDto medic);            // POST
+    public ResponseMedicDto editMedic(Long id, MedicDto medic);     // PUT
+    public ResponseMessage deleteMedic(Long id);                   // DELETE
 }

@@ -1,5 +1,7 @@
 package com.alura.clinica.administrador.Model;
 
+import com.alura.clinica.administrador.Dto.Medico.MedicDto;
+
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -13,10 +15,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@AllArgsConstructor @NoArgsConstructor
+@Getter @Setter
 public class Medico {
     
     @Id
@@ -34,4 +34,14 @@ public class Medico {
 
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
+
+    public Medico(MedicDto dtoMedic){
+        this.nombre = dtoMedic.nombre();
+        this.email = dtoMedic.email();
+        this.identificacion = dtoMedic.identificacion();
+        this.telefono = dtoMedic.telefono();
+        this.activo = false;
+
+        this.direccion = new Direccion(dtoMedic.direccionDto());
+    }
 }

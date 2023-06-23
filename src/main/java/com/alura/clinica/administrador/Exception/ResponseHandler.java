@@ -1,4 +1,4 @@
-package com.alura.clinica.administrador.Exeption;
+package com.alura.clinica.administrador.Exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
