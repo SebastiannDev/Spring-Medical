@@ -1,5 +1,9 @@
 # API REST - Control Medic
 
+```sh
+status build: in progress to integrate security module
+```
+
 ## Overview
 **This System is an api rest that includes:**
   - Http GET
