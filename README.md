@@ -1,22 +1,22 @@
 # API REST - Control Medic
 
 ## Overview
-** This System is an api rest that includes: **
-    - Http GET
-    - Http POST
-    - Http PUT
-    - Htpp Delete
+**This System is an api rest that includes:**
+  - Http GET
+  - Http POST
+  - Http PUT
+  - Htpp Delete
 
-In architecture folder has:
-    - Exeptions: managed for AOP when server trhow an especific exception.
-    - Service: Take the responsabily to transform DTO to Entity model and response to the controller with the database.
-    - Model: Used to interact with the DB MySQL with repository JPA.
-    - Dto: Used to map entities and response the servlet with class Record.
-    - Controller: The servlet endpoint that intercept the request Http.
+**In architecture folder has:**
+   - Exeptions: managed for AOP when server trhow an especific exception.
+   - Service: Take the responsabily to transform DTO to Entity model and response to the controller with the database.
+   - Model: Used to interact with the DB MySQL with repository JPA.
+   - Dto: Used to map entities and response the servlet with class Record.
+   - Controller: The servlet endpoint that intercept the request Http.
 
-## Rules to interact with the endpoint.
+## **Rules to interact with the endpoint.**
 
-### When use *HTTP GET* in the endpoint "v1/medic" you retrive an json array empty or:
+### When use *HTTP GET* in the endpoint "/v1/medic" you retrive an json array empty or:
 
 ```json
     [{
@@ -36,7 +36,7 @@ In architecture folder has:
     }]
 ```
 
-### You can send an especific id in "v1/medic/{id}" to retrive an specific data.
+### You can send an especific id in "/v1/medic/{id}" to retrive an specific data.
 
 ### When you use *HTTP POST* may send body json:
 ```json
@@ -56,5 +56,5 @@ In architecture folder has:
     }
 ```
 
-### *HTTP PUT* need send the especific id and body json to "v1/medic/{id}"
-### *HTTP DELETE* need only send in path variable the id to delete "v1/medic/{id}"
+### *HTTP PUT* need send the especific id and body json to "/v1/medic/{id}"
+### *HTTP DELETE* need only send in path variable the id to delete "/v1/medic/{id}"
