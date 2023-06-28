@@ -40,8 +40,9 @@ public class Medico {
         this.email = dtoMedic.email();
         this.identificacion = dtoMedic.identificacion();
         this.telefono = dtoMedic.telefono();
-        this.activo = false;
+        this.activo = true;
 
         this.direccion = new Direccion(dtoMedic.direccionDto());
+        this.especialidad = dtoMedic.especialidad();
     }
 }

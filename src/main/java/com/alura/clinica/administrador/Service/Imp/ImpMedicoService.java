@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.alura.clinica.administrador.Dto.Medico.MedicDto;
 import com.alura.clinica.administrador.Dto.Medico.ResponseMedicDto;
 import com.alura.clinica.administrador.Dto.Medico.ResponseMessage;
+import com.alura.clinica.administrador.Model.Direccion;
 import com.alura.clinica.administrador.Model.Medico;
 import com.alura.clinica.administrador.Repository.MedicoRepository;
 import com.alura.clinica.administrador.Service.IMedicoService;
@@ -27,7 +28,7 @@ public class ImpMedicoService implements IMedicoService {
         var listMedics = medicoRepository.findAll(Sort.by("nombre"));
 
         return listMedics.stream().map(medic -> new ResponseMedicDto(medic))
-                .collect(Collectors.toList());            
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -45,7 +46,16 @@ public class ImpMedicoService implements IMedicoService {
 
     @Override
     public ResponseMedicDto editMedic(Long id, MedicDto medicoDto) {
-        var entityMedic = new Medico(medicoDto);
+        var entityFounded = medicoRepository.findById(id);
+
+        if (!entityFounded.isPresent()) {
+            throw new EntityNotFoundException();
+        }
+
+        Medico entityMedic = new Medico(id, medicoDto.nombre(), medicoDto.email(), medicoDto.identificacion(),
+                medicoDto.telefono(), medicoDto.activo(), new Direccion(medicoDto.direccionDto()),
+                medicoDto.especialidad());
+
         var updatedMedic = medicoRepository.save(entityMedic);
         return new ResponseMedicDto(updatedMedic);
     }
