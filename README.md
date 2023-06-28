@@ -1,8 +1,8 @@
 # API REST - Control Medic
 
 ## Overview
-This System is an api rest that includes:
-    > Http GET
+** This System is an api rest that includes: **
+    - Http GET
     - Http POST
     - Http PUT
     - Htpp Delete
