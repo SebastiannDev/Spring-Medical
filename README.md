@@ -11,7 +11,7 @@ status build: in progress to integrate security module
   - Http PUT
   - Htpp Delete
 
-**In architecture folder has:**
+**Architecture folder has:**
    - Exeptions: managed for AOP when server trhow an especific exception.
    - Service: Take the responsabily to transform DTO to Entity model and response to the controller with the database.
    - Model: Used to interact with the DB MySQL with repository JPA.
@@ -20,7 +20,7 @@ status build: in progress to integrate security module
 
 ## **Rules to interact with the endpoint.**
 
-### When use *HTTP GET* in the endpoint "/v1/medic" you retrive an json array empty or:
+### When use *[HTTP=GET]* on endpoint "/v1/medic" you will recibe an json array empty or:
 
 ```json
     [{
@@ -40,9 +40,9 @@ status build: in progress to integrate security module
     }]
 ```
 
-### You can send an especific id in "/v1/medic/{id}" to retrive an specific data.
+### You can send a specific {id} in "/v1/medic/{id}" to retrive an specific data.
 
-### When you use *HTTP POST* may send body json:
+### When you use *HTTP POST* can send a body json:
 ```json
     {
         "nombre": "John Doe",
